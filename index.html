@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صَخْرَة صور... باقْيِين وَما بْنِنْكِسِر! — عيد الطلائع 57 | إقليم صور</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #09121d;
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --accent-stone: #78350f;
+            --accent-gold: #d97706;
+            --accent-light: #fef08a;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border-radius: 16px;
+            --shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--bg); color: var(--text-dark); line-height: 1.7; padding-bottom: 80px; scroll-behavior: smooth; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header / Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #451a03 100%);
+            color: white; padding: 60px 20px 50px 20px; text-align: center;
+            border-bottom-left-radius: 40px; border-bottom-right-radius: 40px;
+            box-shadow: 0 15px 35px rgba(9, 18, 29, 0.3); position: relative; margin-bottom: 30px;
+        }
+        .hero-badge {
+            display: inline-block; background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(254, 240, 138, 0.5); color: var(--accent-light);
+            padding: 8px 24px; border-radius: 50px; font-size: 0.95rem; font-weight: 800; margin-bottom: 20px;
+        }
+        .hero h1 { font-size: 3.2rem; font-weight: 900; line-height: 1.2; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero-slogan { font-size: 1.3rem; color: var(--accent-light); font-weight: 800; background: rgba(0, 0, 0, 0.3); display: inline-block; padding: 12px 30px; border-radius: 15px; border-right: 5px solid var(--accent-gold); margin-top: 10px; }
+
+        /* Navigation */
+        .nav-pills {
+            position: sticky; top: 15px; z-index: 100; background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px); margin: 0 auto 30px auto; padding: 10px; border-radius: 50px;
+            box-shadow: var(--shadow); display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; border: 1px solid #cbd5e1; max-width: 1000px;
+        }
+        .nav-pills a { text-decoration: none; color: var(--text-dark); font-weight: 700; font-size: 0.9rem; padding: 10px 20px; border-radius: 30px; transition: all 0.3s ease; }
+        .nav-pills a:hover { background-color: var(--primary-light); color: white; }
+
+        /* Cards */
+        .card { background: var(--card-bg); border-radius: var(--border-radius); padding: 30px; box-shadow: var(--shadow); margin-bottom: 30px; border: 1px solid #e2e8f0; }
+        .section-title { display: flex; align-items: center; gap: 12px; font-size: 1.6rem; color: var(--primary); font-weight: 900; margin-bottom: 25px; border-bottom: 3px solid #f1f5f9; padding-bottom: 15px; }
+        
+        /* Timeline */
+        .timeline { position: relative; padding-right: 35px; }
+        .timeline::before { content: ''; position: absolute; right: 15px; top: 0; bottom: 0; width: 4px; background: #cbd5e1; border-radius: 2px; }
+        .timeline-item { position: relative; margin-bottom: 30px; }
+        .timeline-item::before { content: ''; position: absolute; right: -29px; top: 5px; width: 18px; height: 18px; border-radius: 50%; background: var(--primary); border: 4px solid white; box-shadow: 0 0 0 2px var(--primary); }
+        .time-badge { display: inline-block; background: #eff6ff; color: var(--primary); font-weight: 800; font-size: 0.9rem; padding: 4px 12px; border-radius: 20px; margin-bottom: 8px; border: 1px solid #bfdbfe; }
+        .item-title { font-size: 1.2rem; font-weight: 800; color: var(--text-dark); }
+        .item-desc { color: var(--text-muted); font-size: 1rem; margin-top: 5px; }
+
+        /* Interactive Games Grid */
+        .game-box { background: #f8fafc; border-radius: 16px; padding: 25px; margin-bottom: 30px; border: 1px solid #e2e8f0; border-right: 6px solid var(--primary); }
+        .game-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
+        .game-name { font-size: 1.4rem; font-weight: 900; color: var(--primary); }
+        .game-rules { background: white; padding: 10px 15px; border-radius: 10px; font-size: 0.95rem; margin-bottom: 15px; border: 1px dashed #cbd5e1; color: var(--accent-stone); }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .interactive-card { background: white; border: 2px solid #e2e8f0; border-radius: 12px; padding: 18px; cursor: pointer; transition: all 0.2s; position: relative; }
+        .interactive-card:hover { border-color: var(--primary-light); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .round-badge { position: absolute; top: -10px; right: 15px; background: var(--accent-gold); color: white; font-size: 0.75rem; font-weight: 800; padding: 2px 10px; border-radius: 10px; }
+        .card-prompt { font-weight: 800; font-size: 1rem; color: var(--text-dark); margin-top: 8px; }
+        .card-answer { display: none; margin-top: 12px; padding-top: 12px; border-top: 1px dashed #cbd5e1; font-size: 0.95rem; color: var(--primary); font-weight: 700; line-height: 1.6; }
+
+        /* Mass Section */
+        .mass-section { background: linear-gradient(135deg, #fffbe0 0%, #fef3c7 100%); border: 2px solid var(--accent-gold); border-radius: 16px; padding: 30px; }
+        .mass-title { color: #92400e; font-weight: 900; font-size: 1.2rem; margin-bottom: 10px; margin-top: 20px; border-bottom: 2px solid #fde68a; padding-bottom: 5px; display: inline-block; }
+        .mass-text { font-size: 1rem; color: #78350f; margin-bottom: 15px; background: rgba(255,255,255,0.6); padding: 15px; border-radius: 10px; border-right: 4px solid #d97706; }
+
+        /* Audio Guides */
+        .audio-item { background: white; border: 2px solid #e2e8f0; border-radius: 12px; padding: 18px; margin-bottom: 15px; }
+        .audio-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .audio-title { font-weight: 800; font-size: 1.1rem; color: var(--primary); }
+        .audio-btn { background: var(--primary); color: white; border: none; padding: 8px 18px; border-radius: 20px; font-family: 'Cairo', sans-serif; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
+        .audio-text { display: none; background: #f1f5f9; padding: 15px; border-radius: 10px; margin-top: 12px; font-size: 1rem; border-right: 4px solid var(--accent-gold); font-weight: 600; color: #334155; }
+
+        .print-btn { background: var(--primary); color: white; border: none; padding: 15px 30px; border-radius: 12px; font-family: 'Cairo', sans-serif; font-weight: 900; font-size: 1.1rem; cursor: pointer; display: block; width: 100%; text-align: center; margin-top: 20px; transition: 0.3s; }
+        .print-btn:hover { background: var(--primary-dark); }
+
+        @media print {
+            .nav-pills, .print-btn, .audio-btn, .hero-slogan { display: none !important; }
+            body { background: white; padding: 0; color: black; }
+            .hero { background: none; color: black; box-shadow: none; padding: 0; border: none; margin-bottom: 20px; }
+            .hero h1 { color: black; text-shadow: none; font-size: 2rem; }
+            .hero-badge { border: 1px solid black; color: black; }
+            .card-answer, .audio-text { display: block !important; }
+            .card { box-shadow: none; border: 1px solid #000; padding: 15px; margin-bottom: 15px; page-break-inside: avoid; }
+            .game-box { border: 1px solid #000; padding: 10px; }
+            .interactive-card { border: 1px solid #000; box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <span class="hero-badge">حركة طلائع العذراء — إقليم صور 2026</span>
+            <h1>صَخْرَة صور... باقْيِين وَما بْنِنْكِسِر!</h1>
+            <div class="hero-slogan">"بقينَا بأرضنا، صلّينَا وتحمّلنَا... ومِثْل صخْرَة صُور الحِصَار ما بِيِكْسِرْنا"</div>
+        </div>
+    </header>
+
+    <nav class="nav-pills">
+        <a href="#timeline">جدول التوقيت</a>
+        <a href="#audio-guide">الموجّه الصوتي</a>
+        <a href="#games-detail">تحديات الألعاب (10 جولات)</a>
+        <a href="#mass-section">القداس الإلهي والتقدمات</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- Timeline Section -->
+        <section id="timeline">
+            <div class="card">
+                <div class="section-title"><span>⏳</span><span>البرنامج الميداني (100 دقيقة)</span></div>
+                <div class="timeline">
+                    <div class="timeline-item"><span class="time-badge">00:00 – 00:10</span><div class="item-title">الوصول والتهيؤ</div><div class="item-desc">تجمع الشبيبة بقاعة الكنيسة مع تراتيل هادئة.</div></div>
+                    <div class="timeline-item"><span class="time-badge">00:10 – 00:20</span><div class="item-title">الظرف 1: نداء الصخرة</div><div class="item-desc">تشغيل الصوت الأول وتلاوة صلاة الطلائع الموحدة.</div></div>
+                    <div class="timeline-item"><span class="time-badge">00:20 – 01:05</span><div class="item-title">الظرف 2: معركة الألعاب (45 دقيقة)</div><div class="item-desc">تنفيذ الألعاب الثلاثة (عاصفة الثواني، الشاهد الصامت، إدارة الأزمات في 60 ثانية).</div></div>
+                    <div class="timeline-item"><span class="time-badge">01:05 – 01:20</span><div class="item-title">الظرف 3: جدارية الحجارة الحيّة</div><div class="item-desc">توقيع بوستر الإقليم وكتابة رسائل الصمود من كل فرد.</div></div>
+                    <div class="timeline-item"><span class="time-badge">01:20 – 01:40</span><div class="item-title">الظرف 4: رتبة الشمعة</div><div class="item-desc">إطفاء الأنوار، تشغيل الصوت الثالث، وإضاءة شمعة "صخرة صور".</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audio Guide Section -->
+        <section id="audio-guide">
+            <div class="card">
+                <div class="section-title"><span>🎙️</span><span>نصوص الموجّه الصوتي</span></div>
+                
+                <div class="audio-item">
+                    <div class="audio-top"><div class="audio-title">🔊 المقطع 1: الافتتاحية (يُقرأ أو يُشغل في الظرف 1)</div><button class="audio-btn" onclick="toggleElement('aud1')">إظهار النص</button></div>
+                    <div id="aud1" class="audio-text">"هاي يا أبطال الطلائع والحجارة الحيّة بكل ضيعة جنوبية! سلام المسيح معكم جميعاً من لجنة إقليم صور. صُور بالتاريخ هي 'الصَّخْرَة' يلي حاصرها الإسكندر الأكبر وظلّت صامدة بوجه البحر والجيوش. واليوم، أنتوا الصخرة الحقيقية يلي بقيت بأرضها، صلّت وتحمّلت وما تركت بيوتها. افتحوا هلاق الظرف رقم 1 وخلونا نبلش صلاة الطلائع سوا!"</div>
+                </div>
+
+                <div class="audio-item">
+                    <div class="audio-top"><div class="audio-title">🔊 المقطع 2: إطلاق الألعاب (بداية الظرف 2)</div><button class="audio-btn" onclick="toggleElement('aud2')">إظهار النص</button></div>
+                    <div id="aud2" class="audio-text">"هلق وقت الضحك والفرح المليان أمل! افتحوا الظرف رقم 2، عندكم 45 دقيقة من التحديات والمنافسة الحلوة. اسحبوا أول بطاقة وورجونا قوة فرعكم وصموده!"</div>
+                </div>
+
+                <div class="audio-item">
+                    <div class="audio-top"><div class="audio-title">🔊 المقطع 3: رتبة الشمعة (الظرف 4)</div><button class="audio-btn" onclick="toggleElement('aud3')">إظهار النص</button></div>
+                    <div id="aud3" class="audio-text">"لما بنضوي هالشمعة الكبيرة هلق، تذكروا إنو بنفس هذه الثانية، في شمعة عم تضوا بكل ضيعة وبكل كنيسة صامدة بإقليم صور. الحصار والظلمة ما بيغلبوا النور، ونحنا من شواطئ صور وقراها الحدودية عم بنقول للعالم: صَخْرَة صور... باقيين وما بننكسر!"</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games Section (10 Rounds Each) -->
+        <section id="games-detail">
+            <div class="card">
+                <div class="section-title"><span>🎲</span><span>موسوعة التحديات (10 جولات لكل لعبة)</span></div>
+                
+                <!-- GAME 1 -->
+                <div class="game-box">
+                    <div class="game-header">
+                        <div class="game-name">1️⃣ عاصفة الخمس ثواني (5-Second Blitz)</div>
+                    </div>
+                    <div class="game-rules"><strong>القوانين:</strong> لاعب واحد من الفريق يجب أن يذكر 3 أشياء صحيحة خلال 5 ثوانٍ فقط. (اضغط على البطاقة لرؤية الإجابات المقترحة).</div>
+                    <div class="cards-grid">
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الجولة 1</span><div class="card-prompt">سمّي 3 تراتيل مريمية!</div><div class="card-answer">يا أم الله، سلام سلام، امضي معنا.</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الجولة 2</span><div class="card-prompt">سمّي 3 قرى حدودية بإقليم صور!</div><div class="card-answer">رميش، علما الشعب، دبل، عين إبل، قانا...</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الجولة 3</span><div class="card-prompt">سمّي 3 غراض بشنطة مخيم الطلائع!</div><div class="card-answer">كتاب التراتيل، كشاف (ضو)، قنينة ماي، كاب.</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الجولة 4</span><div class="card-prompt">سمّي 3 مراحل أو فئات بالحركات الرسولية!</div><div class="card-answer">فرسان، طلائع، شبيبة.</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الجولة 5</span><div class="card-prompt">سمّي 3 من رسل المسيح!</div><div class="card-answer">بطرس، بولس، يوحنا، متى، توما...</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الجولة 6</span><div class="card-prompt">سمّي 3 أمثال قالها يسوع!</div><div class="card-answer">الابن الضال، السامري الصالح، الزارع، الوزنات.</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الجولة 7</span><div class="card-prompt">سمّي 3 قديسين من لبنان!</div><div class="card-answer">مار شربل، القديسة رفقا، القديس نعمة الله الحرديني.</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الجولة 8</span><div class="card-prompt">سمّي 3 أقسام من القداس الإلهي!</div><div class="card-answer">كلام التقديس، رتبة السلام، المناولة، القراءات.</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الجولة 9</span><div class="card-prompt">سمّي 3 فضائل مسيحية!</div><div class="card-answer">المحبة، التسامح، السلام، الرجاء، الإيمان.</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الجولة 10</span><div class="card-prompt">سمّي 3 نشاطات بنعملها بالمخيم!</div><div class="card-answer">سهرة نار، رياضة صباحية، نصب الخيم، ألعاب كبرى.</div></div>
+                    </div>
+                </div>
+
+                <!-- GAME 2 -->
+                <div class="game-box">
+                    <div class="game-header">
+                        <div class="game-name">2️⃣ الشاهد الصامت (Silent Witness Charades)</div>
+                    </div>
+                    <div class="game-rules"><strong>القوانين:</strong> يجب تمثيل الموقف بصمت تام (بدون أي صوت) خلال 45 ثانية ليحزره الفريق.</div>
+                    <div class="cards-grid">
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الموقف 1</span><div class="card-prompt">اضغط لرؤية المشهد</div><div class="card-answer">"عم تضووا الشموع وتصلوا بالكنيسة لما انقطعت الكهربا والقصف شغال برا."</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الموقف 2</span><div class="card-prompt">اضغط لرؤية المشهد</div><div class="card-answer">"عم بتركبوا الخيمة بالمخيم بالظلمة وفجأة بلشت تشتي بقوة."</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الموقف 3</span><div class="card-prompt">اضغط لرؤية المشهد</div><div class="card-answer">"بوسطة الإقليم عطلت بالطريق والكل بلش يرتل ويصقف بصوت عالي."</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الموقف 4</span><div class="card-prompt">اضغط لرؤية المشهد</div><div class="card-answer">"مسؤول عم يجرب يشرح لعبة لمجموعة ولاد عم يصرخوا ويعملوا فوضى."</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الموقف 5</span><div class="card-prompt">اضغط لرؤية المشهد</div><div class="card-answer">"تحية العلم الصباحية بالمخيم، والكل نعسان وعم يتثاءب."</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الموقف 6</span><div class="card-prompt">اضغط لرؤية المشهد</div><div class="card-answer">"عم تجرّب تولّع نار السهرة والهوا كتير قوي عم يطفيها."</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الموقف 7</span><div class="card-prompt">اضغط لرؤية المشهد</div><div class="card-answer">"عم تسكب الأكل وتوزعه على كل الفرع بمطبخ المخيم."</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الموقف 8</span><div class="card-prompt">اضغط لرؤية المشهد</div><div class="card-answer">"شخص عم يصلي المسبحة بصمت وخشوع تام."</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الموقف 9</span><div class="card-prompt">اضغط لرؤية المشهد</div><div class="card-answer">"الكاهن عم يعطي وعظة طويلة جداً والناس بلشت تتعب."</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">الموقف 10</span><div class="card-prompt">اضغط لرؤية المشهد</div><div class="card-answer">"عم تحمل صليب خشب تقيل بمسيرة يوم الجمعة العظيمة."</div></div>
+                    </div>
+                </div>
+
+                <!-- GAME 3 (UPDATED) -->
+                <div class="game-box">
+                    <div class="game-header">
+                        <div class="game-name">3️⃣ إدارة الأزمات (60-Second Crisis)</div>
+                    </div>
+                    <div class="game-rules"><strong>القوانين:</strong> تسحب المجموعة بطاقة أزمة وتتشاور. معها 60 ثانية فقط لاقتراح "خطة عمل من 3 خطوات" مقنعة وسريعة لحل المشكلة ميدانياً. (اضغط على البطاقة لرؤية خطة مقترحة).</div>
+                    <div class="cards-grid">
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">أزمة 1</span><div class="card-prompt">انقطعت الكهرباء فجأة أثناء القداس والكنيسة صارت عتمة.</div><div class="card-answer">1. إضاءة فلاشات التلفونات والشموع.<br>2. تهدئة الأولاد بترتيلة جماعية.<br>3. إبلاغ الكاهن ليتابع القداس بالصوت الطبيعي.</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">أزمة 2</span><div class="card-prompt">علقانين بقبو الكنيسة بسبب قصف أو عاصفة قوية.</div><div class="card-answer">1. الابتعاد عن النوافذ والزجاج.<br>2. توزيع الماء والأكل الموجود بالتساوي.<br>3. صلاة المسبحة معاً للحفاظ على الهدوء.</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">أزمة 3</span><div class="card-prompt">تعطلت بوسطة الإقليم بنص الطريق على المخيم.</div><div class="card-answer">1. إبقاء الطلائع داخل البوسطة بأمان.<br>2. الاتصال بلجنة الإقليم أو ميكانيكي.<br>3. بدء لعبة جماعية أو ترتيل لمنع الملل.</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">أزمة 4</span><div class="card-prompt">شخص داخ أو تعرض لإصابة خفيفة أثناء مسيرة راجلة.</div><div class="card-answer">1. إعطاؤه مساحة وتهوية.<br>2. طلب مسعف الصليب الأحمر أو المسؤول الطبي.<br>3. إجلاس باقي المجموعة للراحة وتجنب الفوضى.</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">أزمة 5</span><div class="card-prompt">خلص الأكل بعشاء الرعية وفي 20 شخص بعد ما أكلوا.</div><div class="card-answer">1. تأخير الوقت بنشاط أو كلمة صغيرة.<br>2. شراء أشياء سريعة (خبز، بطاطا، جبنة).<br>3. تقسيم الكمية المتبقية بحصص أصغر.</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">أزمة 6</span><div class="card-prompt">المتكلم الضيف اعتذر قبل 10 دقايق من بدء اللقاء.</div><div class="card-answer">1. تحويل اللقاء إلى حلقة نقاش مفتوحة.<br>2. استخدام لعبة بناء فريق احتياطية.<br>3. قراءة مقطع من الإنجيل والتأمل فيه.</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">أزمة 7</span><div class="card-prompt">ولعت نار صغيرة بسلة المهملات حد قاعة الكنيسة.</div><div class="card-answer">1. إخلاء القاعة بهدوء ودون ركض.<br>2. إحضار مطفأة الحريق فوراً.<br>3. الاتصال بالدفاع المدني إذا امتدت.</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">أزمة 8</span><div class="card-prompt">عضوين بالفرع علّوا صوتهم وتخانقوا بنص اللقاء.</div><div class="card-answer">1. الفصل بينهم فوراً.<br>2. إعطاء استراحة 5 دقائق للجميع.<br>3. التحدث معهم على انفراد خارج القاعة.</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">أزمة 9</span><div class="card-prompt">بلشت تشتي بقوة بنص قداس أو نشاط بساحة الكنيسة.</div><div class="card-answer">1. نقل المذبح والقربان للداخل فوراً.<br>2. توجيه الناس بسرعة لأقرب سقف.<br>3. استكمال القداس بالداخل بانتظام.</div></div>
+                        <div class="interactive-card" onclick="toggleCard(this)"><span class="round-badge">أزمة 10</span><div class="card-prompt">تعطل الميكروفون والصوت أثناء مسرحية شبابية كبيرة.</div><div class="card-answer">1. رفع أصوات الممثلين للحد الأقصى.<br>2. إرسال شخص لتفقد الكابلات.<br>3. تصفيق الجمهور بإيقاع لتغطية الصمت.</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mass Details Section -->
+        <section id="mass-section">
+            <div class="card">
+                <div class="section-title"><span>⛪</span><span>دليل القداس الإلهي "صخرة صور"</span></div>
+                <div class="mass-section">
+                    
+                    <div class="mass-title">📖 القراءات المقترحة:</div>
+                    <div class="mass-text">
+                        <strong>الرسالة:</strong> أعمال الرسل ٢١ : ١-٦ (مرور بولس الرسول في صور وصلاة الجماعة على الشاطئ).<br>
+                        <strong>الإنجيل:</strong> متى ١٥ : ٢١-٢٨ (يسوع في نواحي صور وإيمان المرأة الكنعانية العظيم).
+                    </div>
+
+                    <div class="mass-title">🕯️ النوايا الموحدة لإقليم صور:</div>
+                    <div class="mass-text">
+                        <strong>1. نية الصمود:</strong> "يا رب، بنحط بين إيديك أهلنا وشبيبتنا بالقرى الحدودية، احمِ أرضنا وزدنا ثباتاً ورجاءً لتظلّ قريتنا صخرة إيمان ما بتهزّها أي عاصفة ولا بيكسرها أي حصار، نسألك يا رب."
+                        <br><br>
+                        <strong>2. نية الحجارة الحيّة:</strong> "من أجل شبيبة الطلائع بعيدها الـ 57، ليبقى حضورهم بالرعايا شهادة حية للمسيح، ويضلوا النور يلي بيضوي عتمة الإيام الصعبة، نسألك يا رب."
+                        <br><br>
+                        <strong>3. نية الوحدة والسلام:</strong> "من أجل إقليم صور بكل فروعه الصامدة، ومن أجل السلام بلبنان وكل متألم. ليبقى قلبنا واحد وإيماننا عابر لكل جدار، نسألك يا رب."
+                        <br><br>
+                        <strong>4. نية الشهداء والراقدين:</strong> "نذكر يا رب كل يلي سبقونا لعندك، وكل ضحايا الحرب، أعطهم الراحة الأبدية وبلسم قلوب عائلاتهم، نسألك يا رب."
+                    </div>
+
+                    <div class="mass-title">🍞 التقدمات الرمزية:</div>
+                    <div class="mass-text">
+                        • <strong>حجر محلي (من أرض الضيعة):</strong> "نقدم لك يا رب هذا الحجر من أرض قريتنا، كرمز لصلابتنا وتجذرنا بأرضنا، اقبله منا يا رب."<br>
+                        • <strong>شمعة الطلائع المضاءة:</strong> "نقدم هذه الشمعة المشتعلة، علامة لرجائنا الذي لا ينطفئ رغم كل الظروف."<br>
+                        • <strong>الخبز والخمر:</strong> "مع هذا الخبز والخمر، نقدم لك تعبنا، خوفنا، وصمودنا، ليتحولوا معك لخبز الحياة وكأس الخلاص."
+                    </div>
+
+                </div>
+                <button class="print-btn" onclick="window.print()">🖨️ طباعة دليل اللقاء والقداس</button>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // إظهار/إخفاء النصوص الصوتية
+        function toggleElement(id) {
+            const el = document.getElementById(id);
+            el.style.display = (el.style.display === "block") ? "none" : "block";
+        }
+        
+        // إظهار/إخفاء إجابات البطاقات
+        function toggleCard(card) {
+            const answer = card.querySelector('.card-answer');
+            if (answer) {
+                if(answer.style.display === "block") {
+                    answer.style.display = "none";
+                    card.style.borderColor = "#e2e8f0";
+                } else {
+                    answer.style.display = "block";
+                    card.style.borderColor = "#1e3a8a";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
